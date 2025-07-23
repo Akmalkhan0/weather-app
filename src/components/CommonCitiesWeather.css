@@ -1,0 +1,206 @@
+.common-cities-weather {
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  background-color: var(--secondary-bg-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card .description {
+  font-size: 0.9em;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.weather-card p {
+  font-size: 0.85em;
+  color: var(--text-color);
+  margin: 3px 0;
+}
+
+.common-cities-weather.dark .weather-card .description,
+.common-cities-weather.dark .weather-card p {
+  color: var(--text-color);
+}
+
+.common-cities-weather h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.weather-card .description {
+  font-size: 0.9em;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.weather-card p {
+  font-size: 0.85em;
+  color: var(--text-color);
+  margin: 3px 0;
+}
+
+.common-cities-weather.dark .weather-card .description,
+.common-cities-weather.dark .weather-card p {
+  color: var(--text-color);
+}
+
+.common-cities-weather.dark h2 {
+  color: var(--primary-color-dark);
+}
+
+.weather-card .description {
+  font-size: 0.9em;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.weather-card p {
+  font-size: 0.85em;
+  color: var(--text-color);
+  margin: 3px 0;
+}
+
+.common-cities-weather.dark .weather-card .description,
+.common-cities-weather.dark .weather-card p {
+  color: var(--text-color);
+}
+
+.weather-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.weather-card .description {
+  font-size: 0.9em;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.weather-card p {
+  font-size: 0.85em;
+  color: var(--text-color);
+  margin: 3px 0;
+}
+
+.common-cities-weather.dark .weather-card .description,
+.common-cities-weather.dark .weather-card p {
+  color: var(--text-color);
+}
+
+.weather-card {
+  background-color: var(--app-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.weather-card .description {
+  font-size: 0.9em;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.weather-card p {
+  font-size: 0.85em;
+  color: var(--text-color);
+  margin: 3px 0;
+}
+
+.common-cities-weather.dark .weather-card .description,
+.common-cities-weather.dark .weather-card p {
+  color: var(--text-color);
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.weather-card .description {
+  font-size: 0.9em;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.weather-card p {
+  font-size: 0.85em;
+  color: var(--text-color);
+  margin: 3px 0;
+}
+
+.common-cities-weather.dark .weather-card .description,
+.common-cities-weather.dark .weather-card p {
+  color: var(--text-color);
+}
+
+.weather-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.weather-card .temperature {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-top: 10px;
+}
+
+.weather-card .description {
+  font-size: 0.9em;
+  color: var(--accent-color);
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.weather-card .description {
+  font-size: 0.9em;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.weather-card p {
+  font-size: 0.85em;
+  color: var(--text-color);
+  margin: 3px 0;
+}
+
+.common-cities-weather.dark .weather-card .description,
+.common-cities-weather.dark .weather-card p {
+  color: var(--text-color);
+}
+
+.common-cities-weather.dark .weather-card {
+  background-color: var(--app-bg-color);
+  border: 1px solid var(--border-color);
+}
+
+.common-cities-weather.dark .weather-card h3 {
+  color: var(--primary-color-dark);
+}
+
+.common-cities-weather.dark .weather-card .temperature {
+  color: var(--accent-color-dark);
+}
+
+.common-cities-weather.dark .weather-card .description,
+.common-cities-weather.dark .weather-card p {
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .weather-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,179 @@
+.weather-display {
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  background-color: var(--secondary-bg-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-display h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.city-name {
+  font-size: 1.2em; /* Adjust as needed */
+  font-weight: bold;
+  color: var(--text-color); /* Or a specific color for the city name */
+}
+
+.weather-display .description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+  grid-auto-rows: minmax(120px, auto); /* Ensure minimum height for rows */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.weather-grid .weather-card-item:first-child {
+  grid-column: span 2; /* First card spans two columns */
+  grid-row: span 2; /* First card spans two rows */
+  min-height: 255px; /* Adjust height to fit two cards + gap */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-grid .weather-card-item:nth-child(2) {
+  grid-column: span 2; /* Second card spans two columns */
+}
+
+.weather-grid .weather-card-item:nth-child(3) {
+  grid-column: span 1; /* Third card spans one column */
+}
+
+.weather-grid .weather-card-item:nth-child(4) {
+  grid-column: span 1; /* Fourth card spans one column */
+}
+
+.weather-grid .weather-card-item:nth-child(5) {
+  grid-column: span 2; /* Fifth card spans two columns */
+}
+
+.weather-grid .weather-card-item:nth-child(6) {
+  grid-column: span 2; /* Sixth card spans two columns */
+}
+
+.weather-grid .weather-card-item:nth-child(7) {
+  grid-column: span 2; /* Seventh card spans two columns */
+}
+
+.weather-grid .weather-card-item:nth-child(8) {
+  grid-column: span 2; /* Eighth card spans two columns */
+}
+
+@media (max-width: 768px) {
+  .weather-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+  .weather-grid .weather-card-item:first-child,
+  .weather-grid .weather-card-item:nth-child(2),
+  .weather-grid .weather-card-item:nth-child(3),
+  .weather-grid .weather-card-item:nth-child(4),
+  .weather-grid .weather-card-item:nth-child(5),
+  .weather-grid .weather-card-item:nth-child(6),
+  .weather-grid .weather-card-item:nth-child(7),
+  .weather-grid .weather-card-item:nth-child(8) {
+    grid-column: auto; /* Reset column span on small screens */
+    grid-row: auto; /* Reset row span on small screens */
+    min-height: 120px; /* Reset min-height */
+  }
+}
+
+.weather-card-item {
+  background-color: var(--app-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px; /* Ensure consistent height for cards */
+  /* Remove fixed height for individual cards to allow grid to control */
+  height: auto;
+}
+
+.weather-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.weather-card-item h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.weather-card-item p {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 5px 0;
+}
+
+.weather-card-item .sub-info {
+  font-size: 0.9em;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-weight: normal;
+}
+
+.weather-icon {
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+/* Dark theme adjustments */
+.App.dark .weather-display {
+  background-color: var(--secondary-bg-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.App.dark .weather-display h2 {
+  color: var(--primary-color-dark);
+}
+
+.App.dark .weather-card-item {
+  background-color: var(--app-bg-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.App.dark .weather-card-item h3 {
+  color: var(--primary-color-dark);
+}
+
+.App.dark .weather-card-item p {
+  color: var(--text-color);
+}
+
+.App.dark .weather-card-item .sub-info {
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,565 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+body.light {
+  --app-bg-color: #fff;
+  --text-color: #333;
+  --primary-color: #007bff;
+  --primary-color-dark: #0056b3;
+  --secondary-bg-color: #f9f9f9;
+  --border-color: #eee;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --app-shadow-color: rgba(0, 0, 0, 0.15);
+  --header-footer-bg: #007bff;
+  --header-footer-text: white;
+  --icon-color: #007bff;
+  --page-bg-color: #f9f9f9;
+  --page-shadow-color: rgba(0, 0, 0, 0.1);
+  --input-border-color: #ddd;
+  --input-bg-color: #fff;
+  --input-text-color: #333;
+  --button-bg-color: #007bff;
+  --button-text-color: white;
+  --button-hover-bg: #0056b3;
+  --theme-button-bg: #007bff;
+  --theme-button-text: white;
+  --theme-button-hover-bg: #0056b3;
+}
+.sun-icon{
+  position: absolute;
+  top: -8px;
+  left: -19px;
+}
+.moon-icon{
+  position: absolute;
+  top: -10px;
+  right: 20px;
+}
+
+body.dark {
+  --app-bg-color: #444;
+  --text-color: #f0f0f0;
+  --primary-color: #88c0f0;
+  --primary-color-dark: #66a0d0;
+  --secondary-bg-color: #333;
+  --border-color: #555;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --app-shadow-color: rgba(0, 0, 0, 0.4);
+  --header-footer-bg: #222;
+  --header-footer-text: #f0f0f0;
+  --icon-color: #88c0f0;
+  --page-bg-color: #333;
+  --page-shadow-color: rgba(0, 0, 0, 0.3);
+  --input-border-color: #666;
+  --input-bg-color: #333;
+  --input-text-color: #f0f0f0;
+  --button-bg-color: #88c0f0;
+  --button-text-color: #333;
+  --button-hover-bg: #66a0d0;
+  --theme-button-bg: #88c0f0;
+  --theme-button-text: #333;
+  --theme-button-hover-bg: #66a0d0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease;
+  background-color: var(--secondary-bg-color); /* Use secondary background for body */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--app-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 15px var(--app-shadow-color);
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 900px; /* Further increased max-width for better desktop layout */
+  margin: 20px auto; /* Center the app on larger screens */
+  overflow: hidden; /* Ensure content respects border-radius */
+}
+
+@media (max-width: 768px) {
+  .App {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 15px; /* Slightly more padding on mobile */
+  }
+}
+
+.App h1 {
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-size: 2.5em; /* Larger heading */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.App.dark h1 {
+  color: var(--primary-color-dark);
+}
+
+.App.dark {
+  background-color: var(--app-bg-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 15px var(--app-shadow-color); /* Darker shadow for dark theme */
+}
+
+.app-header {
+  background-color: var(--header-footer-bg);
+  color: var(--header-footer-text);
+  padding: 15px 20px;
+  border-radius: 12px 12px 0 0; /* Match App border-radius */
+  margin: -20px -20px 20px -20px; /* Adjust to fit within App padding */
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.app-header.dark {
+  background-color: var(--header-footer-bg);
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.app-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Increased gap for better spacing */
+}
+
+.app-header nav a {
+  color: var(--header-footer-text);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px; /* Larger clickable area */
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for subtle animation */
+}
+
+.app-header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.app-footer {
+  background-color: var(--header-footer-bg);
+  color: var(--header-footer-text);
+  padding: 15px 20px;
+  border-radius: 0 0 12px 12px; /* Match App border-radius */
+  margin: 20px -20px -20px -20px; /* Adjust to fit within App padding */
+  margin-top: auto; /* Push footer to the bottom */
+  box-shadow: 0 -2px 5px var(--shadow-color);
+}
+
+.app-footer.dark {
+  background-color: var(--header-footer-bg);
+  box-shadow: 0 -2px 5px var(--shadow-color);
+}
+
+.about-page, .contact-page {
+  padding: 30px; /* More padding for content pages */
+  text-align: left;
+  background-color: var(--page-bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--page-shadow-color);
+  margin-bottom: 20px;
+  flex-grow: 1; /* Allow content pages to take available space */
+}
+
+.App.dark .about-page, .App.dark .contact-page {
+  background-color: var(--page-bg-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 8px var(--page-shadow-color);
+}
+
+.about-page h2, .contact-page h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px; /* More space below heading */
+  font-size: 2em;
+}
+
+.App.dark .about-page h2, .App.dark .contact-page h2 {
+  color: var(--primary-color-dark);
+}
+
+.about-page p, .contact-page p {
+  line-height: 1.6; /* Improve readability */
+  margin-bottom: 10px;
+}
+
+.about-page ul {
+  list-style-type: disc;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+.about-page li {
+  margin-bottom: 8px;
+}
+
+.theme-switch-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.sun-icon {
+  left: 8px;
+  color: #f39c12; /* Sun color */
+  opacity: 1;
+}
+
+.moon-icon {
+  right: 8px;
+  color: #f1c40f; /* Moon color */
+  opacity: 0;
+}
+
+input:checked ~ .slider .sun-icon {
+  opacity: 0;
+  transform: translateY(-38%) translateX(-2%); /* Move sun out */
+}
+
+input:checked ~ .slider .moon-icon {
+  opacity: 1;
+  transform: translateY(-38%) translateX(0px); /* Move moon in */
+}
+
+.app-header {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px 8px 0 0;
+  margin: -20px -20px 20px -20px; /* Adjust to fit within App padding */
+}
+
+.app-header.dark {
+  background-color: #333;
+}
+
+.app-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.app-header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.app-header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.app-footer {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 0 0 8px 8px;
+  margin: 20px -20px -20px -20px; /* Adjust to fit within App padding */
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+.app-footer.dark {
+  background-color: #333;
+}
+
+.about-page, .contact-page {
+  padding: 20px;
+  text-align: left;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.App.dark .about-page, .App.dark .contact-page {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+.about-page h2, .contact-page h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.App.dark .about-page h2, .App.dark .contact-page h2 {
+  color: #88c0f0;
+}
+
+.about-page ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.about-page li {
+  margin-bottom: 5px;
+}
+
+.theme-toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+}
+
+.search-bar button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.weather-display {
+  margin-top: 20px;
+  padding: 25px; /* More padding */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  flex-grow: 1; /* Allow weather display to take available space */
+  background-color: var(--secondary-bg-color);
+  border: 1px solid var(--border-color);
+}
+
+.weather-display h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.weather-display .description {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.weather-info p {
+  margin: 12px 0;
+  font-size: 1.05em;
+  color: var(--text-color);
+}
+
+.weather-info svg {
+  font-size: 1.3em;
+  color: var(--icon-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.weather-icon {
+  font-size: 1.8em; /* Larger weather icons */
+  color: var(--icon-color);
+  
+}
+
+.city-map {
+  margin-top: 25px; /* More space above map */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  width: 100%;
+  max-width: 100%; /* Map takes full width of App container */
+  height: 450px; /* Slightly taller map */
+  transition: box-shadow 0.3s ease;
+}
+
+.App-content {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-page, .contact-page {
+  background-color: var(--background-color-secondary);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+.about-page h2, .contact-page h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-page h3 {
+  color: var(--primary-color);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about-page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-page ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.about-page ul li svg {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 1.3em;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.contact-info p svg {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 1.3em;
+}
+
+@media (min-width: 768px) {
+  .App-content {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Adjusted for larger blocks */
+    justify-content: center; /* Center the grid items */
+  }
+}
+
+@media (min-width: 1200px) {
+  .App-content {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Further adjustment for very wide screens */
+  }
+}
