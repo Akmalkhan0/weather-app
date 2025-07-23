@@ -20,7 +20,7 @@ function App() {
   const [theme, setTheme] = useState('dark'); // 'light' or 'dark'
 
   const openWeatherMapApiKey = import.meta.env.VITE_OPEN_WEATHER;
-  const googleMapsApiKey = 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao';
+  const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS;
 
   useEffect(() => {
     document.body.className = theme;
