@@ -18,7 +18,7 @@ function App() {
   const [error, setError] = useState('');
   const [mapCoords, setMapCoords] = useState(null);
   const [theme, setTheme] = useState('dark'); // 'light' or 'dark'
-  const openWeatherMapApiKey = process.env.VITE_OPEN_WEATHER;
+  const openWeatherMapApiKey = 4de5be02c2439750e1d74f052a120068;
   const googleMapsApiKey = process.env.VITE_OPEN_MAP;
 
   useEffect(() => {
