@@ -8,8 +8,8 @@ Weather App is a responsive and modern React application that allows users to se
 
 ## 📸 Screenshot & GIF Video
 <p>
-<img width="500" alt="image" src="https://i.ibb.co/B2XHdztR/Screenshot-2025-08-05-032904.png" />
-<img alt="weather App Exploring Gif" src="https://github.com/user-attachments/assets/d42793c6-25ca-42ee-a785-c924b685c241">
+<img width="300" alt="image" src="https://i.ibb.co/B2XHdztR/Screenshot-2025-08-05-032904.png" />
+<img width="300" alt="weather App Exploring Gif" src="https://github.com/user-attachments/assets/d42793c6-25ca-42ee-a785-c924b685c241">
 </p>
 
 ## 🚀 Features
