@@ -12,7 +12,7 @@ const CommonCitiesWeather = ({ apiKey, theme, onCardClick }) => {
       const data = [];
       for (const city of commonCities) {
         try {
-          const response = await fetch(
+          const response = await axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
           );
           data.push(response.data);
