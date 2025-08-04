@@ -23,10 +23,10 @@ function WeatherDisplay({ weatherData }) {
   }
 
   // Convert temperature from Kelvin to Celsius
-  const tempCelsius = (weatherData.main.temp - 273.15).toFixed(1);
-  const feelsLikeCelsius = (weatherData.main.feels_like - 273.15).toFixed(1);
-  const tempMinCelsius = (weatherData.main.temp_min - 273.15).toFixed(1);
-  const tempMaxCelsius = (weatherData.main.temp_max - 273.15).toFixed(1);
+  const tempCelsius = (weatherData.main.temp).toFixed(1);
+  const feelsLikeCelsius = (weatherData.main.feels_like ).toFixed(1);
+  const tempMinCelsius = (weatherData.main.temp_min ).toFixed(1);
+  const tempMaxCelsius = (weatherData.main.temp_max ).toFixed(1);
 
   const getWeatherIcon = (iconCode) => {
     switch (iconCode.slice(0, 2)) {
@@ -49,8 +49,8 @@ function WeatherDisplay({ weatherData }) {
     return directions[index];
   };
 
-  const sunriseTime = new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString();
-  const sunsetTime = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString();
+  const sunriseTime = new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-US', 'hour12');
+  const sunsetTime = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-US', 'hour12');
 
   return (
     <div className="weather-display">
