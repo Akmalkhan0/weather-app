@@ -18,6 +18,7 @@ function App() {
   const [error, setError] = useState('');
   const [mapCoords, setMapCoords] = useState(null);
   const [theme, setTheme] = useState('dark'); // 'light' or 'dark'
+
   const openWeatherMapApiKey = '4de5be02c2439750e1d74f052a120068';
   const googleMapsApiKey = 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao';
 
@@ -42,7 +43,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(
+      const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${openWeatherMapApiKey}&units=metric`
       );
       setWeatherData(response.data);
