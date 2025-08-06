@@ -19,8 +19,8 @@ function App() {
   const [mapCoords, setMapCoords] = useState(null);
   const [theme, setTheme] = useState('dark'); // 'light' or 'dark'
 
-  const openWeatherMapApiKey = 'API_KEY';
-  const googleMapsApiKey = 'API_KEY';
+  const openWeatherMapApiKey = '4de5be02c2439750e1d74f052a120068';
+  const googleMapsApiKey = 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao';
 
   useEffect(() => {
     document.body.className = theme;
