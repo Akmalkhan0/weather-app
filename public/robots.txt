@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://akmweather.vercel.app/sitemap.xml
