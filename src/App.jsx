@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
@@ -15,7 +15,6 @@ import NotFound from './components/NotFound';
 
 function App() {
   const [city, setCity] = useState('');
-
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState('');
   const [mapCoords, setMapCoords] = useState(null);
