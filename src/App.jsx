@@ -10,6 +10,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import CommonCitiesWeather from './components/CommonCitiesWeather';
 import './App.css';
+import NotFound from './components/NotFound';
+
 
 function App() {
   const [city, setCity] = useState('');
@@ -17,10 +19,9 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState('');
   const [mapCoords, setMapCoords] = useState(null);
-  const [theme, setTheme] = useState('dark'); // 'light' or 'dark'
-
-  const openWeatherMapApiKey = import.meta.env.VITE_OPEN_WEATHER;
-  const googleMapsApiKey = 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao';
+  const [theme, setTheme] = useState('dark'); 
+  const openWeatherMapApiKey = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
+  const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   useEffect(() => {
     document.body.className = theme;
@@ -43,7 +44,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(
+      const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${openWeatherMapApiKey}&units=metric`
       );
       setWeatherData(response.data);
@@ -78,6 +79,7 @@ function App() {
           } />
           <Route path="/about" element={<About theme={theme} />} />
           <Route path="/contact" element={<Contact theme={theme} />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer theme={theme} />
       </div>
